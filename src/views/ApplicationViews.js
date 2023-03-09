@@ -10,7 +10,11 @@ export const ApplicationViews = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route element={<Authorized />}>
-                {/* Add Routes here */}
+                {/* <Route path="/" element={<ClassList/>} />
+                <Route path="/classes/new" element={<CreateClass/>} />
+                <Route path="/classes" element={<MyClass />} />
+                <Route path="/instructors" element={<InstructorList/>} />
+                <Route path="/classes/edit" element={<EditClass />} /> */}
             </Route>
         </Routes>
     </>
