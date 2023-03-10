@@ -8,7 +8,7 @@ export const NavBar = () => {
             <li className="navbar__item">
                 <Link className="nav-link" to="/">Classes</Link>
                 <Link className="nav-link" to="/instructors">Instructors</Link>
-                <Link className="nav-link" to="/classes/`${id}`">My Classes</Link>
+                <Link className="nav-link" to="/classes/{id}">My Classes</Link>
             </li>
             {
                 (localStorage.getItem("l2l_token") !== null) ?
