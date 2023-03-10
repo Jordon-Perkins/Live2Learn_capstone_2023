@@ -2,13 +2,14 @@ import { Route, Routes } from "react-router-dom"
 import { Login } from "../components/auth/Login"
 import { Register } from "../components/auth/Register"
 import { Authorized } from "./Authorized"
-
+import { Classes } from "../components/class/Classes"
 
 export const ApplicationViews = () => {
     return <>
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Classes />} />
             <Route element={<Authorized />}>
                 {/* Add Routes here */}
             </Route>
