@@ -4,7 +4,7 @@ export const EditClass = () => {
 
     return (
         <form>
-            <h2>New Class</h2>
+            <h2>Edit this Class</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">Title:</label>

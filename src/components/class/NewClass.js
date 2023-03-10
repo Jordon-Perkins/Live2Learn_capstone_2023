@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react"
 
 export const NewClass = () => {
 
+
+
+
     return (
         <form>
             <h2>New Class</h2>
