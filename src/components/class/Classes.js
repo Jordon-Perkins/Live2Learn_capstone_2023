@@ -5,13 +5,20 @@ import { getClasses, deleteClass, leaveClass, joinClass} from "../../managers/Cl
 export const Classes = () => {
 
     const [ classes, setClasses ] = useState([])
+    console.log(classes)
 
     useEffect(() => {
-        getClasses().then(data => setClasses(data))
+        getClasses().then(data => {
+            setClasses(data)
+            console.log(classes)
+        })
     }, [])
 
     const getAllClasses = () => {
-        getClasses().then(data => setClasses(data))
+        getClasses().then(data => {
+            setClasses(data)
+            console.log(classes)
+        })
     }
 
     // const handleDelete = (id) => {
