@@ -17,7 +17,7 @@ export const NewClass = () => {
         description: "",
         instructor: 0,
         skillId: 0,
-        tag: ""
+        tags: ""
     })
 
     useEffect(() => {
@@ -106,12 +106,12 @@ export const NewClass = () => {
                         <label htmlFor="tag">Tag:</label>
                         <input
                         required
-                        id="description"
+                        id="tag"
                         type="text"
                         className="form-control"
                         placeholder="Add a Tag?"
-                        value={currentClass.tag}
-                        name="tag"
+                        value={currentClass.tags}
+                        name="tags"
                         onChange={changeClassState}
                         />
                     </div>
@@ -128,7 +128,7 @@ export const NewClass = () => {
                                 date: currentClass.date,
                                 instructor: localStorage.getItem("l2l_token"),
                                 skillId: parseInt(currentClass.skillId),
-                                tags: currentClass.tag.split(" "),
+                                tags: currentClass.tags.split(" "),
                             }
 
                             console.log(thisClass)
