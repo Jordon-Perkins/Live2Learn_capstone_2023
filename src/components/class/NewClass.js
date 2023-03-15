@@ -1,6 +1,39 @@
 import React, { useEffect, useState } from "react"
+import { useNavigate } from 'react-router-dom'
+import { createClass,} from '../../managers/ClassManager.js'
+// import { getGames } from '../../managers/GameManager.js'
 
 export const NewClass = () => {
+    const navigate = useNavigate()
+    const [skillId, setSkillId] = useState([])
+
+
+        // Since the input fields are bound to the values of
+        // the properties of this state variable, you need to
+        // provide some default values.
+    const [currentClass, setClassEvent] = useState({
+        date: "",
+        time: "",
+        description: "",
+        instructor: 0,
+        skillId: 0
+    })
+
+    useEffect(() => {
+        // TODO: Get the game, then set the state
+        getSkills().then((data) => {
+            // console.log(data)
+            setSkillId(data)
+        })
+    }, [])
+
+    const changeClassState = (domClass) => {
+        // TODO: Complete the onChange function
+        const copy = {...currentClass}
+        copy[domClass.target.name] = domClass.target.value
+        setCurrentClass(copy)
+    }
+
 
 
 
@@ -11,76 +44,84 @@ export const NewClass = () => {
                     <fieldset>
                         <div className="form-group">
                             <label htmlFor="title">Title:</label>
-                            <input
-                                onChange={
-                                    (evt) => {
-                                        console.log("handling title")
-                                        // const copy = {...employee}
-                                        // copy.name = evt.target.value
-                                        // change(copy)
-                                    }
-                                }
-                                required autoFocus
-                                type="text"
-                                className="form-control"
-                                placeholder="Full name"
-                                />
+                            <input type="text" name="title" required autoFocus className="form-control"
+                                value={currentClass.title}
+                                onChange={changeClassState}
+                            />
                         </div>
                     </fieldset>
                     <fieldset>
                         <div className="form-group">
                             <label htmlFor="skillLevel">Skill Level:</label>
-                            <input
-                                onChange={
-                                    (evt) => {
-                                        console.log("handling skill level")
-                                        // const copy = {...employee}
-                                        // copy.specialty = evt.target.value
-                                        // change(copy)
+                            <select required autoFocus className="skillList" value={currentClass.skillId}
+                                onChange={(evt) => {const copy = {...currentClass}
+                                copy.skillId = parseInt(evt.target.value)
+                                setCurrentClass(copy)}}
+                            ><option name="skillId" className="game" >Select Skill</option>
+                                {skillId.map(skill => {
+                                    // console.log(game)
+                                        return <option
+                                            name="skillId"
+                                            className="form-control"
+                                            value={skill.id}
+                                            key={`skill--${skill.id}`}
+                                        >{skill.title}</option>
                                     }
+                                    )
                                 }
-                                required autoFocus
-                                type="text"
-                                className="form-control"
-                                placeholder="Technical specialty"
-                                />
+                            </select>
                         </div>
                     </fieldset>
                     <fieldset>
                         <div className="form-group">
                             <label htmlFor="time">Time of the Class: </label>
-                            {/* <input type="text" name="time" placeholder="HH:MM" required autoFocus className="form-control"
-                                value={currentEvent.time}
-                                onChange={changeEventState}
-                            /> */}
+                            <input type="text" name="time" placeholder="HH:MM" required autoFocus className="form-control"
+                                value={currentClass.time}
+                                onChange={changeClassState}
+                            />
                         </div>
                     </fieldset>
                     <fieldset>
                         <div className="form-group">
                             <label htmlFor="date">Date of the class: </label>
-                            {/* <input type="text" name="date" placeholder="YYYY-MM-DD" required autoFocus className="form-control"
-                                value={currentEvent.date}
-                                onChange={changeEventState}
-                            /> */}
+                            <input type="text" name="date" placeholder="YYYY-MM-DD" required autoFocus className="form-control"
+                                value={currentClass.date}
+                                onChange={changeClassState}
+                            />
                         </div>
                     </fieldset>
                     <fieldset>
                     <div className="form-group">
                         <label htmlFor="tag">Tag:</label>
-                        {/* <input
+                        <input
                         required
                         id="description"
                         type="text"
                         className="form-control"
-                        placeholder="What is it?"
-                        value={userChoices.description}
-                        onChange={handleInputChange}
-                        /> */}
+                        placeholder="Add a Tag?"
+                        value={currentClass.Tag}
+                        onChange={changeClassState}
+                        />
                     </div>
                     </fieldset>
-                    {/* <button onClick={hireEmployee} className="btn btn-primary">
-                        Hire Employee
-                    </button> */}
+                    <button type="submit"
+                        onClick={evt => {
+                            // Prevent form from being submitted
+                            evt.preventDefault()
+
+                            const thisClass = {
+                                description: currentClass.description,
+                                time: currentClass.time,
+                                date: currentClass.date,
+                                instructor: localStorage.getItem("l2l_token"),
+                                skillId: parseInt(currentClass.skillId)
+                            }
+
+                            // Send POST request to your API
+                            createClass(thisClass)
+                                .then(() => navigate("/classes/{id}"))
+                        }}
+                        className="btn btn-primary">Create</button>
                 </form>
             )
 }
