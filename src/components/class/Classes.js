@@ -14,11 +14,11 @@ export const Classes = () => {
         getClasses().then(data => setClasses(data))
     }
 
-    const handleDelete = (id) => {
-      deleteClass(id).then(() => {
-          {getAllClasses()}
-           }) 
-    }
+    // const handleDelete = (id) => {
+    //   deleteClass(id).then(() => {
+    //       {getAllClasses()}
+    //        }) 
+    // }
 
     // const classes = [
     //     {
@@ -71,11 +71,11 @@ export const Classes = () => {
                             <p className="class-description">{thisClass.description}</p>
                             <p className="class-date">{thisClass.date}{thisClass.time}</p>
                             <p className="class-level">{thisClass?.skillId?.skill_level}</p>
-                            <button className="btn btn-2 btn-sep icon-create"
+                            {/* <button className="btn btn-2 btn-sep icon-create"
                             onClick={() => {
                                 handleDelete(thisClass.id)
                             }}
-                            >Delete Class</button>
+                            >Delete Class</button> */}
                             {/* {
                             event.joined ?
                                 // TODO: create the Leave button

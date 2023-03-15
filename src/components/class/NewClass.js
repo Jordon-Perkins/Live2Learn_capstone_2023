@@ -135,7 +135,7 @@ export const NewClass = () => {
 
                             // Send POST request to your API
                             createClass(thisClass)
-                                .then(() => navigate("/classes/{id}"))
+                                .then(() => navigate("/classes"))
                         }}
                         className="btn btn-primary">Create</button>
                 </form>

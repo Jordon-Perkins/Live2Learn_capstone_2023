@@ -21,9 +21,9 @@ export const ApplicationViews = () => {
             <Route element={<Authorized />}>
             <Route path="/" element={<Classes />} />
             <Route path="/instructors" element={<Instructors />} />
-            <Route path="/classes/{id}" element={<MyClass />} />
+            <Route path="/classes" element={<MyClass />} />
             <Route path="/classes/new" element={<NewClass />} />
-            <Route path="/classes/{id}/edit" element={<EditClass />} />
+            <Route path="/classes/:classId/edit" element={<EditClass />} />
             </Route>
         </Routes>
     </>
