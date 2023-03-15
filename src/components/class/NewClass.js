@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import { createClass,} from '../../managers/ClassManager.js'
-// import { getGames } from '../../managers/GameManager.js'
+import { getSkills } from '../../managers/SkillManager.js'
 
 export const NewClass = () => {
     const navigate = useNavigate()
@@ -11,12 +11,13 @@ export const NewClass = () => {
         // Since the input fields are bound to the values of
         // the properties of this state variable, you need to
         // provide some default values.
-    const [currentClass, setClassEvent] = useState({
+    const [currentClass, setCurrentClass] = useState({
         date: "",
         time: "",
         description: "",
         instructor: 0,
-        skillId: 0
+        skillId: 0,
+        tag: ""
     })
 
     useEffect(() => {
@@ -31,6 +32,7 @@ export const NewClass = () => {
         // TODO: Complete the onChange function
         const copy = {...currentClass}
         copy[domClass.target.name] = domClass.target.value
+        // console.log(copy)
         setCurrentClass(copy)
     }
 
@@ -52,6 +54,15 @@ export const NewClass = () => {
                     </fieldset>
                     <fieldset>
                         <div className="form-group">
+                            <label htmlFor="description">Description:</label>
+                            <input type="text" name="description" required autoFocus className="form-control"
+                                value={currentClass.description}
+                                onChange={changeClassState}
+                            />
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <div className="form-group">
                             <label htmlFor="skillLevel">Skill Level:</label>
                             <select required autoFocus className="skillList" value={currentClass.skillId}
                                 onChange={(evt) => {const copy = {...currentClass}
@@ -65,7 +76,7 @@ export const NewClass = () => {
                                             className="form-control"
                                             value={skill.id}
                                             key={`skill--${skill.id}`}
-                                        >{skill.title}</option>
+                                        >{skill.skill_level}</option>
                                     }
                                     )
                                 }
@@ -99,7 +110,8 @@ export const NewClass = () => {
                         type="text"
                         className="form-control"
                         placeholder="Add a Tag?"
-                        value={currentClass.Tag}
+                        value={currentClass.tag}
+                        name="tag"
                         onChange={changeClassState}
                         />
                     </div>
@@ -110,12 +122,16 @@ export const NewClass = () => {
                             evt.preventDefault()
 
                             const thisClass = {
+                                title: currentClass.title,
                                 description: currentClass.description,
                                 time: currentClass.time,
                                 date: currentClass.date,
                                 instructor: localStorage.getItem("l2l_token"),
-                                skillId: parseInt(currentClass.skillId)
+                                skillId: parseInt(currentClass.skillId),
+                                tags: currentClass.tag.split(" "),
                             }
+
+                            console.log(thisClass)
 
                             // Send POST request to your API
                             createClass(thisClass)
