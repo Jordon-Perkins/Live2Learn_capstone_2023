@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { getClasses, deleteClass, leaveClass, joinClass} from "../../managers/ClassManager.js"
+import { deleteClass, leaveClass, joinClass} from "../../managers/ClassManager.js"
+import { getMyClasses} from "../../managers/InstructorManager"
 import { useNavigate ,useParams } from "react-router-dom"
 // import { getSkills } from '../../managers/SkillManager.js'
 
@@ -9,11 +10,11 @@ export const MyClass = () => {
     // const [skillId, setSkillId] = useState([])
 
     useEffect(() => {
-        getClasses().then(data => setClasses(data))
+        getMyClasses().then(data => setClasses(data))
     }, [])
 
     const getAllClasses = () => {
-        getClasses().then(data => setClasses(data))
+        getMyClasses().then(data => setClasses(data))
     }
 
     const handleDelete = (id) => {
