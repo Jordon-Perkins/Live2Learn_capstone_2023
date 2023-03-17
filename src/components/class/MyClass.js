@@ -1,42 +1,49 @@
 import React, { useEffect, useState } from "react"
 import { deleteClass, leaveClass, joinClass} from "../../managers/ClassManager.js"
-import { getMyClasses} from "../../managers/InstructorManager"
+import { getInstructingClasses} from "../../managers/InstructorManager"
+import { getAttendingClasses} from "../../managers/StudentManager"
 import { useNavigate ,useParams } from "react-router-dom"
 // import { getSkills } from '../../managers/SkillManager.js'
 
 export const MyClass = () => {
-    const [ classes, setClasses ] = useState([])
+    const [classesInstructing, setClassesInstructing] = useState([])
     const navigate = useNavigate()
-    // const [skillId, setSkillId] = useState([])
+    const [classesAttending, setClassesAttending] = useState([])
 
     useEffect(() => {
-        getMyClasses().then(data => setClasses(data))
+        getInstructingClasses().then(data => setClassesInstructing(data))
     }, [])
 
-    const getAllClasses = () => {
-        getMyClasses().then(data => setClasses(data))
+    useEffect(() => {
+        getAttendingClasses().then(data => setClassesAttending(data))
+    }, [])
+
+    const resetInstructingClasses = () => {
+        getInstructingClasses().then(data => setClassesInstructing(data))
     }
+
+    const resetAttendingClasses = () => {
+        getAttendingClasses().then(data => setClassesAttending(data))
+    }
+
 
     const handleDelete = (id) => {
       deleteClass(id).then(() => {
-          {getAllClasses()}
+          {resetInstructingClasses()}
            }) 
     }
 
-  //   useEffect(() => {
-  //     // TODO: Get the game, then set the state
-  //     getSkills().then((data) => {
-  //         // console.log(data)
-  //         setSkillId(data)
-  //     })
-  // }, [])
-
+    const handleLeave = (id) => {
+        leaveClass(id).then(() => {
+            {resetAttendingClasses()}
+            }) 
+    }
 
   
 
     return (<>
                 <div>
-                    {classes.map(thisClass => {return  (<div className="class-card" key={thisClass.id}>
+                    {classesInstructing.map(thisClass => {return  (<div className="class-card" key={thisClass.id}>
                             <div className="classDetails">
                             <p className="class-title">{thisClass.title}</p>
                             <p className="class-description">{thisClass.description}</p>
@@ -52,8 +59,25 @@ export const MyClass = () => {
                             <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
                             </div>
                         </div>)})}
+                </div>
+                <div>
+                    {classesAttending.map(thisClass => {return  (<div className="class-card" key={thisClass.id}>
+                            <div className="classDetails">
+                            <p className="class-title">{thisClass.title}</p>
+                            <p className="class-description">{thisClass.description}</p>
+                            <p className="class-date">{thisClass.date}{thisClass.time}</p>
+                            <p className="class-level">{thisClass?.skill?.skill_level}</p>
+                            
+                            <button className="btn btn-2 btn-sep icon-create"
+                                onClick={() => {
+                                    handleLeave(thisClass.id)
+                                }}
+                            >Leave Class</button>
+                            
+                            </div>
+                        </div>)})}
                                     </div>
-                </>)
+            </>)
 }
 
 

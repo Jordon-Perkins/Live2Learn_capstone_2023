@@ -1,4 +1,4 @@
-export const getMyClasses = () => {
+export const getInstructingClasses = () => {
     return fetch("http://localhost:8000/classes_instructing", {
         headers:{
             "Authorization": `Token ${localStorage.getItem("l2l_token")}`
