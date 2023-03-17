@@ -3,14 +3,13 @@ import { getClasses, deleteClass, leaveClass, joinClass} from "../../managers/Cl
 
 
 export const Classes = () => {
-
+    var user = parseInt(localStorage.getItem("l2l_user_id"))
     const [ classes, setClasses ] = useState([])
-    console.log(classes)
+    const [ ] = useState([])
 
     useEffect(() => {
         getClasses().then(data => {
             setClasses(data)
-            console.log(classes)
         })
     }, [])
 
@@ -39,11 +38,20 @@ export const Classes = () => {
     //        }) 
     // }
 
-
     return (<>
                 <div>
                     {classes.map(thisClass => {
+                        var student_ids = thisClass.students.map(student => student.id)
+                        var is_currentUser_student = student_ids.includes(user)
+                        var instructor_ids = thisClass.instructors.map(instructor => instructor.id)
+                        var is_currentUser_instructor = instructor_ids.includes(user)
+
+
                         console.log(thisClass)
+                        console.log(student_ids)
+                        console.log(is_currentUser_student)
+                        console.log(is_currentUser_instructor)
+                        console.log(user)
 
                         return (<div className="class-card" key={thisClass.id}>
                             <div className="classDetails">
