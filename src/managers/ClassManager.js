@@ -50,26 +50,26 @@ export const deleteClass = (id) => {
 };
 
 
-// export const leaveClass = thisClassId => {
-//     // TODO: Write the DELETE fetch request to leave an event
-//     return fetch(`http://localhost:8000/classes/${thisClassId}/leave`, {
-//         method: "DELETE",
-//         headers: {
-//             "Authorization": `Token ${localStorage.getItem("l2l_token")}`,
-//         }
-//     })
-//   }
+export const leaveClass = thisClassId => {
+    // TODO: Write the DELETE fetch request to leave an event
+    return fetch(`http://localhost:8000/classes/${thisClassId}/leave`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("l2l_token")}`,
+        }
+    })
+  }
   
-//   export const joinClass = thisClassId => {
-//       // TODO: Write the POST fetch request to join and event
-//       return fetch(`http://localhost:8000/classes/${thisClassId}/signup`, {
-//         method: "POST",
-//         headers:{
-//             "Authorization": `Token ${localStorage.getItem("l2l_token")}`,
-//             "Content-Type": "application/json",
-//             "Accept": "application/json"
-//         },
-//         body: JSON.stringify(thisClassId)
-//     })
-//         .then(res => res.json())
-//   }
+  export const joinClass = thisClassId => {
+      // TODO: Write the POST fetch request to join and event
+      return fetch(`http://localhost:8000/classes/${thisClassId}/signup`, {
+        method: "POST",
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("l2l_token")}`,
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(thisClassId)
+    })
+        .then(res => res.json())
+  }
