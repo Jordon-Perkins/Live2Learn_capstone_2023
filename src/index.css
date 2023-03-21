@@ -22,6 +22,7 @@ body, input, select, textarea {
 
 .card {
 	--bs-card-border-width: 0px;
+	background-color: transparent;
 }
 
 .row {
