@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react"
 import { unstable_HistoryRouter } from "react-router-dom"
 import { getClasses, deleteClass, leaveClass, joinClass} from "../../managers/ClassManager.js"
+import { getSkills } from '../../managers/SkillManager.js'
 import { chunks } from "../../utils.js"
 import "./cards.css"
 
 export const Classes = () => {
     var user = parseInt(localStorage.getItem("l2l_user_id"))
     const [ classes, setClasses ] = useState([])
-    const [ ] = useState([])
+    // const [skillId, setSkillId] = useState([])
 
     useEffect(() => {
         getClasses().then(data => {
@@ -21,6 +22,12 @@ export const Classes = () => {
             console.log(classes)
         })
     }
+
+    // useEffect(() => {
+    //     getSkills().then((data) => {
+    //         setSkillId(data)
+    //     })
+    // }, [])
 
     const handleJoin = (id) => {
         joinClass(id).then(() => {
@@ -85,13 +92,13 @@ export const Classes = () => {
                                             <p className="card-header">{thisClass.title}</p>
                                         </div>
                                         <div className="row">
-                                            <p className="card-body">{thisClass.description}</p>
+                                            <p className="description card-body">{thisClass.description}</p>
                                         </div>
                                         <div className="row">
                                             <p className="card-body">{thisClass.date}{thisClass.time}</p>
                                         </div>
                                         <div className="row">
-                                            <p className="card-body">{thisClass?.skillId?.skill_level}</p>
+                                            <p className="card-body">{thisClass?.skill.skill_level}</p>
                                         </div>
                                         { buttons_all(thisClass) }
                                     </div>
