@@ -10,7 +10,7 @@ body, input, select, textarea {
     line-height: 1.5;
     padding: 0;
     margin: 0;
-	/* background-image: url("https://brightspotcdn.byu.edu/dims4/default/a0d8af2/2147483647/strip/true/crop/3536x3536+0+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot.s3.amazonaws.com%2Fe2%2F9c%2Fbf85a485411486995f6dd37a11b6%2Fballet-web-jan-22-2112-44-053-bw.jpg"); */
+	background-image: url("https://brightspotcdn.byu.edu/dims4/default/a0d8af2/2147483647/strip/true/crop/3536x3536+0+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot.s3.amazonaws.com%2Fe2%2F9c%2Fbf85a485411486995f6dd37a11b6%2Fballet-web-jan-22-2112-44-053-bw.jpg");
 	background-attachment:fixed;
   	background-size: 100%;
 }
@@ -45,9 +45,9 @@ code {
     font-weight: bold;
 } */
 
-.nav-item {
+/* .nav-item {
     list-style-type: none;
-}
+} */
 
 /* .card {
     background-color:rgb(122, 105, 123);

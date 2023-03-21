@@ -50,7 +50,7 @@ export const Login = () => {
                     <fieldset style={{
                         textAlign: "center"
                     }}>
-                        <button className="btn btn-1 btn-sep icon-send" type="submit">Sign In</button>
+                        <button class="btn btn-dark" type="submit">Sign In</button>
                     </fieldset>
                 </form>
             </section>

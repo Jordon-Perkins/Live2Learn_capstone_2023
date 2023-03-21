@@ -53,14 +53,14 @@ export const Classes = () => {
         } 
         else if (is_currentUser_student) {
             console.log("i am a student")
-            return <div className="vertical-center"><button class="btn btn-dark"
+            return <div className="vertical-center"><button className="btn btn-dark"
             onClick={() => {
                 handleLeave(thisClass.id)
             }}
         >Leave Class</button></div>
         } else {
             console.log("lets dance")
-            return <div className="vertical-center"><button class="btn btn-dark"
+            return <div className="vertical-center"><button className="btn btn-dark"
             onClick={() => {
                 handleJoin(thisClass.id)
             }}

@@ -1,10 +1,21 @@
-/* .navbar {
+.navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: center;
+    gap: 500px; 
+    display: inline;
 }
 
 .navbar__item {
-    flex-basis: 20%;
+    display: flex;
+    flex-basis: 50%;
+    gap: 20px; 
     list-style-type: none;
-} */
+    justify-content: center;
+    /* flex-wrap: wrap;
+    display: inline; */
+}
+
+.navbar-brand {
+    margin-left: 2rem;
+}
