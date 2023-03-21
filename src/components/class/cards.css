@@ -8,13 +8,13 @@
     border-radius: 10px;
   } */
 
-  .classDetails {
+  /* .classDetails {
     font-size: 1rem;
     padding: 0.75rem; 
     background-color: rgb(122, 105, 123); 
     text-align: center;
     border-radius: 10px;
-  }
+  } */
   /* .row {
     display: flex;
     flex-wrap: wrap;
@@ -32,3 +32,9 @@
 /* .card {
     background-color:rgb(122, 105, 123);
 } */
+
+.col-container {
+  border-radius:10px;
+  padding: 5px;
+  border: 1px solid black;
+}

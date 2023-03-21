@@ -20,6 +20,14 @@ body, input, select, textarea {
     letter-spacing: 2px;
 } */
 
+.card {
+	--bs-card-border-width: 0px;
+}
+
+.row {
+	margin: 1rem;
+}
+
 code {
   	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

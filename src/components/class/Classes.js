@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react"
+import { unstable_HistoryRouter } from "react-router-dom"
 import { getClasses, deleteClass, leaveClass, joinClass} from "../../managers/ClassManager.js"
+import { chunks } from "../../utils.js"
 import "./cards.css"
 
 export const Classes = () => {
@@ -65,33 +67,43 @@ export const Classes = () => {
         >Attend Class</button></div>
         }
     }
-    // }
+
+
+    const classesChunks = chunks(classes, 4)
 
     return (<>
-                <div class="row">
-                    {
-                        classes.map(thisClass => {
-
-
-                        
-                            console.log(user)
-
-
+        {
+            classesChunks.map(row => {
+                return (
+                    <div className="row">
+                        {
+                        row.map(thisClass => {
                             return (
-                                <div className="card col-3 text-center" key={thisClass.id}>
-                                    <div className="classDetails">
-                                        <p className="card-header">{thisClass.title}</p>
-                                        <p className="card-body">{thisClass.description}</p>
-                                        <p className="card-body">{thisClass.date}{thisClass.time}</p>
-                                        <p className="card-body">{thisClass?.skillId?.skill_level}</p>
+                                <div className="card col-3 text-center classDetails" key={thisClass.id}>
+                                    <div className="col-container">
+                                        <div className="row">
+                                            <p className="card-header">{thisClass.title}</p>
+                                        </div>
+                                        <div className="row">
+                                            <p className="card-body">{thisClass.description}</p>
+                                        </div>
+                                        <div className="row">
+                                            <p className="card-body">{thisClass.date}{thisClass.time}</p>
+                                        </div>
+                                        <div className="row">
+                                            <p className="card-body">{thisClass?.skillId?.skill_level}</p>
+                                        </div>
                                         { buttons_all(thisClass) }
                                     </div>
                                 </div>
                             )
                         })
                     }
-                </div>
-            </>)
+                    </div>
+                )
+            })
+        }
+    </>)
 }
 
 
