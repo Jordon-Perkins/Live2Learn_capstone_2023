@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import { createClass,} from '../../managers/ClassManager.js'
 import { getSkills } from '../../managers/SkillManager.js'
+import "./cards.css"
 
 export const NewClass = () => {
     const navigate = useNavigate()
@@ -137,7 +138,7 @@ export const NewClass = () => {
                             createClass(thisClass)
                                 .then(() => navigate("/classes"))
                         }}
-                        className="btn btn-primary">Create</button>
+                        className="btn btn-dark">Create</button>
                 </form>
             )
 }
