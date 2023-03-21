@@ -3,6 +3,8 @@ import { useNavigate, useParams} from 'react-router-dom'
 import { getClass, updateClass } from '../../managers/ClassManager.js'
 import { getSkills } from '../../managers/SkillManager.js'
 
+import "./cards.css"
+
 export const EditClass = () => {
     const navigate = useNavigate()
     const { classId } = useParams()
@@ -45,6 +47,7 @@ export const EditClass = () => {
 
     return (
         <form>
+            <div className="items-container">
             <h2>Edit this Class</h2>
             <fieldset>
                 <div className="form-group">
@@ -129,7 +132,8 @@ export const EditClass = () => {
                             navigate("/classes")
                         })
                 }}
-                className="btn btn-primary">Update</button>
+                className="btn btn-dark">Update</button>
+                </div>
         </form>
     )
 }

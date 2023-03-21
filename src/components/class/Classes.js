@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { getClasses, deleteClass, leaveClass, joinClass} from "../../managers/ClassManager.js"
-
+import "./cards.css"
 
 export const Classes = () => {
     var user = parseInt(localStorage.getItem("l2l_user_id"))
@@ -51,24 +51,24 @@ export const Classes = () => {
         } 
         else if (is_currentUser_student) {
             console.log("i am a student")
-            return <button className="btn btn-2 btn-sep icon-create"
+            return <div className="vertical-center"><button class="btn btn-dark"
             onClick={() => {
                 handleLeave(thisClass.id)
             }}
-        >Leave Class</button>
+        >Leave Class</button></div>
         } else {
             console.log("lets dance")
-            return <button className="btn btn-2 btn-sep icon-create"
+            return <div className="vertical-center"><button class="btn btn-dark"
             onClick={() => {
                 handleJoin(thisClass.id)
             }}
-        >Attend Class</button>
+        >Attend Class</button></div>
         }
     }
     // }
 
     return (<>
-                <div>
+                <div class="row">
                     {
                         classes.map(thisClass => {
 
@@ -78,12 +78,12 @@ export const Classes = () => {
 
 
                             return (
-                                <div className="class-card" key={thisClass.id}>
+                                <div className="card col-3 text-center" key={thisClass.id}>
                                     <div className="classDetails">
-                                        <p className="class-title">{thisClass.title}</p>
-                                        <p className="class-description">{thisClass.description}</p>
-                                        <p className="class-date">{thisClass.date}{thisClass.time}</p>
-                                        <p className="class-level">{thisClass?.skillId?.skill_level}</p>
+                                        <p className="card-header">{thisClass.title}</p>
+                                        <p className="card-body">{thisClass.description}</p>
+                                        <p className="card-body">{thisClass.date}{thisClass.time}</p>
+                                        <p className="card-body">{thisClass?.skillId?.skill_level}</p>
                                         { buttons_all(thisClass) }
                                     </div>
                                 </div>

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react"
 import { deleteClass, leaveClass, joinClass} from "../../managers/ClassManager.js"
 import { getInstructingClasses} from "../../managers/InstructorManager"
 import { getAttendingClasses} from "../../managers/StudentManager"
-import { useNavigate ,useParams } from "react-router-dom"
+import { useNavigate , useParams } from "react-router-dom"
+import "./cards.css"
 // import { getSkills } from '../../managers/SkillManager.js'
 
 export const MyClass = () => {
@@ -42,41 +43,43 @@ export const MyClass = () => {
   
 
     return (<>
-                <div>
-                    {classesInstructing.map(thisClass => {return  (<div className="class-card" key={thisClass.id}>
+    <div  className="row">
+                <div  className="row">
+                    {classesInstructing.map(thisClass => {return  (<div className="card col-3 text-center" key={thisClass.id}>
                             <div className="classDetails">
-                            <p className="class-title">{thisClass.title}</p>
-                            <p className="class-description">{thisClass.description}</p>
-                            <p className="class-date">{thisClass.date}{thisClass.time}</p>
-                            <p className="class-level">{thisClass?.skill?.skill_level}</p>
-                            <button className="btn btn-2 btn-sep icon-create"
+                            <p className="card-header">{thisClass.title}</p>
+                            <p className="card-body">{thisClass.description}</p>
+                            <p className="card-body">{thisClass.date}{thisClass.time}</p>
+                            <p className="card-body">{thisClass?.skill?.skill_level}</p>
+                            <div className="vertical-center">
+                            <button class="btn btn-dark"
                             onClick={() => {
                                 handleDelete(thisClass.id)
                             }}
-                            >Delete Class</button>
-                            <button className="btn btn-outline-light" onClick={ () => { navigate(`${ thisClass.id }/edit`)}}>Edit this Class</button>
-                            {/* { deleteButton(itemObj.id) }
-                            <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
+                            >Delete Class</button></div>
+                            <div className="vertical-center">
+                            <button class="btn btn-dark" onClick={ () => { navigate(`${ thisClass.id }/edit`)}}>Edit this Class</button></div>
                             </div>
                         </div>)})}
                 </div>
-                <div>
-                    {classesAttending.map(thisClass => {return  (<div className="class-card" key={thisClass.id}>
+                <div  className="row">
+                    {classesAttending.map(thisClass => {return  (<div className="card col-3 text-center" key={thisClass.id}>
                             <div className="classDetails">
-                            <p className="class-title">{thisClass.title}</p>
-                            <p className="class-description">{thisClass.description}</p>
-                            <p className="class-date">{thisClass.date}{thisClass.time}</p>
-                            <p className="class-level">{thisClass?.skill?.skill_level}</p>
-                            
-                            <button className="btn btn-2 btn-sep icon-create"
+                            <p className="card-header">{thisClass.title}</p>
+                            <p className="card-body">{thisClass.description}</p>
+                            <p className="card-body">{thisClass.date}{thisClass.time}</p>
+                            <p className="card-body">{thisClass?.skill?.skill_level}</p>
+                            <div className="vertical-center">
+                            <button class="btn btn-dark"
                                 onClick={() => {
                                     handleLeave(thisClass.id)
                                 }}
                             >Leave Class</button>
-                            
+                            </div>
                             </div>
                         </div>)})}
                                     </div>
+            </div>
             </>)
 }
 

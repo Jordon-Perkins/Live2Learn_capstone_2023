@@ -1,45 +1,58 @@
-@import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+
 /*Typography
 --------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&display=swap');
 
-body, button, input, select, textarea {
-    color: #404040;
-    font-family: "Comfortaa", Arial, sans-serif;
+body, input, select, textarea {
+    color:black;
+    font-family: 'Edu NSW ACT Foundation', cursive;
     font-size: 1rem;
     line-height: 1.5;
     padding: 0;
     margin: 0;
+	/* background-image: url("https://brightspotcdn.byu.edu/dims4/default/a0d8af2/2147483647/strip/true/crop/3536x3536+0+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot.s3.amazonaws.com%2Fe2%2F9c%2Fbf85a485411486995f6dd37a11b6%2Fballet-web-jan-22-2112-44-053-bw.jpg"); */
+	background-attachment:fixed;
+  	background-size: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: "Patua One", serif;
+/* h1, h2, h3, h4, h5, h6 {
+    font-family: 'Edu NSW ACT Foundation', cursive;
     letter-spacing: 2px;
-}
+} */
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.fakeLink {
+/* .fakeLink {
     color: -webkit-link;
     cursor: pointer;
     text-decoration: underline;
     background: none!important;
     border: none;
     cursor: pointer;
-}
+} */
 
-.fakeLink:hover {
+/* .fakeLink:hover {
     font-weight: bold;
-}
+} */
 
 .nav-item {
     list-style-type: none;
 }
 
+/* .card {
+    background-color:rgb(122, 105, 123);
+	flex: 0 0 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	border: 2px solid white;
+    border-radius: 10px;
+} */
+
 /* General button style */
-.btn {
+/* .btn {
 	border: none;
 	font-family: Menlo;
 	font-size: inherit;
@@ -57,19 +70,19 @@ code {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-}
+} */
 
-.btn:after {
+/* .btn:after {
 	content: '';
 	position: absolute;
 	z-index: -1;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-}
+} */
 
 /* Pseudo elements for icons */
-.btn:before {
+/* .btn:before {
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
@@ -77,20 +90,20 @@ code {
 	line-height: 1;
 	position: relative;
 	-webkit-font-smoothing: antialiased;
-}
+} */
 
 
 /* Icon separator */
-.btn-sep {
+/* .btn-sep {
 	padding: 25px 60px 25px 120px;
 }
 
 .btn-sep:before {
 	background: rgba(0,0,0,0.15);
-}
+} */
 
 /* Button 1 */
-.btn-1 {
+/* .btn-1 {
 	background: #3498db;
 	color: #fff;
 }
@@ -112,10 +125,10 @@ code {
 	line-height: 3;
 	font-size: 140%;
 	width: 60px;
-}
+} */
 
 /* Button 2 */
-.btn-2 {
+/* .btn-2 {
 	background: #2ecc71;
 	color: #fff;
 }
@@ -137,10 +150,10 @@ code {
 	line-height: 3;
 	font-size: 140%;
 	width: 60px;
-}
+} */
 
 /* Button 3 */
-.btn-3 {
+/* .btn-3 {
 	background: #e74c3c;
 	color: #fff;
 }
@@ -162,10 +175,10 @@ code {
 	line-height: 3;
 	font-size: 140%;
 	width: 60px;
-}
+} */
 
 /* Button 3 */
-.btn-4 {
+/* .btn-4 {
 	background: #34495e;
 	color: #fff;
 }
@@ -187,10 +200,10 @@ code {
 	line-height: 3;
 	font-size: 140%;
 	width: 60px;
-}
+} */
 
 /* Icons */
 
-.icon-send:before {
+/* .icon-send:before {
 	content: "🔓";
-}
+} */
