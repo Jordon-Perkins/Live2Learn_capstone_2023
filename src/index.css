@@ -3,16 +3,20 @@
 --------------------------------------------------------------*/
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&display=swap');
 
-body, input, select, textarea {
+body {
+
+	background: linear-gradient(rgb(255, 255, 255), rgba(69, 44, 91, 0.42)), url("https://brightspotcdn.byu.edu/dims4/default/a0d8af2/2147483647/strip/true/crop/3536x3536+0+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot.s3.amazonaws.com%2Fe2%2F9c%2Fbf85a485411486995f6dd37a11b6%2Fballet-web-jan-22-2112-44-053-bw.jpg");
+	background-attachment:fixed;
+  	background-size: 100%;
+}
+
+input, select, textarea {
     color:black;
     font-family: 'Edu NSW ACT Foundation', cursive;
     font-size: 1rem;
     line-height: 1.5;
     padding: 0;
     margin: 0;
-	background-image: url("https://brightspotcdn.byu.edu/dims4/default/a0d8af2/2147483647/strip/true/crop/3536x3536+0+0/resize/1200x1200!/quality/90/?url=https%3A%2F%2Fbrigham-young-brightspot.s3.amazonaws.com%2Fe2%2F9c%2Fbf85a485411486995f6dd37a11b6%2Fballet-web-jan-22-2112-44-053-bw.jpg");
-	background-attachment:fixed;
-  	background-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {

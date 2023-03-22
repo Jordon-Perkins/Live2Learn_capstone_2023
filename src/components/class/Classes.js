@@ -76,7 +76,7 @@ export const Classes = () => {
     }
     
     return (<>
-        <h2 className="classHeader">Find A Class!</h2>
+        <h2 className="classHeader text-center">Find A Class!</h2>
         {
             chunks(classes, 4).map(row => {
                 return (

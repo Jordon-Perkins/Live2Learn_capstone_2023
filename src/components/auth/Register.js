@@ -77,10 +77,10 @@ export const Register = () => {
                 }}>
                     <button class="btn btn-dark" type="submit">Register</button>
                 </fieldset>
-            </form>
-            <section className="link--register">
+                <section className="link--register text-center">
                 Already registered? <Link to="/login">Login</Link>
-            </section>
+                </section>
+            </form>
         </main>
     )
 }
