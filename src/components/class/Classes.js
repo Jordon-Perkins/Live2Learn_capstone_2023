@@ -84,20 +84,22 @@ export const Classes = () => {
                         {
                         row.map(thisClass => {
                             return (
-                                <div className="card col-3 text-center classDetails" key={thisClass.id}>
+                                <div className="card col-3 classDetails" key={thisClass.id}>
                                     <div className="col-container">
                                         <div className="row">
-                                            <h3 className="card-header">{thisClass.title}</h3>
+                                            <h3 className="card-header text-center">{thisClass.title}</h3>
                                         </div>
                                         <div className="row">
-                                            <p className="description">Description of class:</p>
-                                            <p className="description card-body">{thisClass.description}</p>
+                                            <h5 className="description">Description of class:</h5>
+                                            <p className="description ">{thisClass.description}</p>
                                         </div>
                                         <div className="row">
-                                            <p className="info card-body">{thisClass.date}{thisClass.time}</p>
+                                            <h5>Time and Date of Class:</h5>
+                                            <p className="info">{thisClass.date}{thisClass.time}</p>
                                         </div>
                                         <div className="row">
-                                            <p className="info card-body">{thisClass?.skill.skill_level}</p>
+                                            <h5>Skill Level:</h5>
+                                            <p className="info">{thisClass?.skill.skill_level}</p>
                                         </div>
                                         { buttons_all(thisClass) }
                                     </div>

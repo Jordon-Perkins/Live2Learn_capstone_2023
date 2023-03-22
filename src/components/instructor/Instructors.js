@@ -44,9 +44,10 @@ export const Instructors = () => {
 
     return (<>
         <div className="row">
+        <h4 className="instructorHeader">Instructor Profiles!</h4>
             {instructors.map(instructor => {return  (<div className="instructor-card col-md-6" key={instructor.id}>
                     <div className="instructorDetails">
-                    <h4>Instructor Profile</h4>
+                    
                     <h5>Name:</h5>
                     <p className="instructor-fullName">{instructor.full_name}</p>
                     <h5>Bio:</h5>
