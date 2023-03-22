@@ -15,10 +15,10 @@ body, input, select, textarea {
   	background-size: 100%;
 }
 
-/* h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Edu NSW ACT Foundation', cursive;
     letter-spacing: 2px;
-} */
+}
 
 .card {
 	--bs-card-border-width: 0px;

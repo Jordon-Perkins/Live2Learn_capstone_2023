@@ -76,6 +76,7 @@ export const Classes = () => {
     }
     
     return (<>
+        <h2 className="classHeader">Find A Class!</h2>
         {
             chunks(classes, 4).map(row => {
                 return (
@@ -86,16 +87,17 @@ export const Classes = () => {
                                 <div className="card col-3 text-center classDetails" key={thisClass.id}>
                                     <div className="col-container">
                                         <div className="row">
-                                            <p className="card-header">{thisClass.title}</p>
+                                            <h3 className="card-header">{thisClass.title}</h3>
                                         </div>
                                         <div className="row">
+                                            <p className="description">Description of class:</p>
                                             <p className="description card-body">{thisClass.description}</p>
                                         </div>
                                         <div className="row">
-                                            <p className="card-body">{thisClass.date}{thisClass.time}</p>
+                                            <p className="info card-body">{thisClass.date}{thisClass.time}</p>
                                         </div>
                                         <div className="row">
-                                            <p className="card-body">{thisClass?.skill.skill_level}</p>
+                                            <p className="info card-body">{thisClass?.skill.skill_level}</p>
                                         </div>
                                         { buttons_all(thisClass) }
                                     </div>
