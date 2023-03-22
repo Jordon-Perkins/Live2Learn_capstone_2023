@@ -74,13 +74,10 @@ export const Classes = () => {
         >Attend Class</button></div>
         }
     }
-
-
-    const classesChunks = chunks(classes, 4)
-
+    
     return (<>
         {
-            classesChunks.map(row => {
+            chunks(classes, 4).map(row => {
                 return (
                     <div className="row">
                         {

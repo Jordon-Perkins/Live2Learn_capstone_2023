@@ -44,41 +44,41 @@ export const MyClass = () => {
 
     return (<>
     <div  className="row">
-                <div  className="row">
-                    {classesInstructing.map(thisClass => {return  (<div className="card col-3 text-center" key={thisClass.id}>
-                            <div className="classDetails">
-                            <p className="card-header">{thisClass.title}</p>
-                            <p className="card-body">{thisClass.description}</p>
-                            <p className="card-body">{thisClass.date}{thisClass.time}</p>
-                            <p className="card-body">{thisClass?.skill?.skill_level}</p>
-                            <div className="vertical-center">
-                            <button class="btn btn-dark"
-                            onClick={() => {
-                                handleDelete(thisClass.id)
-                            }}
-                            >Delete Class</button></div>
-                            <div className="vertical-center">
-                            <button class="btn btn-dark" onClick={ () => { navigate(`${ thisClass.id }/edit`)}}>Edit this Class</button></div>
+        <div  className="row">
+            {classesInstructing.map(thisClass => {return  (<div className="card col-3 text-center" key={thisClass.id}>
+                    <div className="classDetails">
+                    <p className="card-header">{thisClass.title}</p>
+                    <p className="card-body">{thisClass.description}</p>
+                    <p className="card-body">{thisClass.date}{thisClass.time}</p>
+                    <p className="card-body">{thisClass?.skill?.skill_level}</p>
+                    <div className="vertical-center">
+                    <button class="btn btn-dark"
+                    onClick={() => {
+                        handleDelete(thisClass.id)
+                    }}
+                    >Delete Class</button></div>
+                    <div className="vertical-center">
+                    <button class="btn btn-dark" onClick={ () => { navigate(`${ thisClass.id }/edit`)}}>Edit this Class</button></div>
+                    </div>
+                </div>)})}
+        </div>
+        <div  className="row">
+            {classesAttending.map(thisClass => {return  (<div className="card col-3 text-center" key={thisClass.id}>
+                    <div className="classDetails">
+                    <p className="card-header">{thisClass.title}</p>
+                    <p className="card-body">{thisClass.description}</p>
+                    <p className="card-body">{thisClass.date}{thisClass.time}</p>
+                    <p className="card-body">{thisClass?.skill?.skill_level}</p>
+                    <div className="vertical-center">
+                    <button class="btn btn-dark"
+                        onClick={() => {
+                            handleLeave(thisClass.id)
+                        }}
+                    >Leave Class</button>
+                    </div>
+                    </div>
+                </div>)})}
                             </div>
-                        </div>)})}
-                </div>
-                <div  className="row">
-                    {classesAttending.map(thisClass => {return  (<div className="card col-3 text-center" key={thisClass.id}>
-                            <div className="classDetails">
-                            <p className="card-header">{thisClass.title}</p>
-                            <p className="card-body">{thisClass.description}</p>
-                            <p className="card-body">{thisClass.date}{thisClass.time}</p>
-                            <p className="card-body">{thisClass?.skill?.skill_level}</p>
-                            <div className="vertical-center">
-                            <button class="btn btn-dark"
-                                onClick={() => {
-                                    handleLeave(thisClass.id)
-                                }}
-                            >Leave Class</button>
-                            </div>
-                            </div>
-                        </div>)})}
-                                    </div>
             </div>
             </>)
 }
