@@ -43,5 +43,32 @@
 
 .description {
   overflow: scroll;
-  height:60px;
+  height:40px;
+  margin: 0rem;
+  padding: 0rem;
 }
+
+.classHeader {
+  background-color:rgb(122, 105, 123);
+  height: 50px; 
+  border-radius:10px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.btn {
+  margin: .25rem;
+}
+
+.info {
+  height: 20px;
+  margin: 0rem;
+}
+
+.cardRow { 
+  margin: 0rem;
+}
+
+/* .card-body {
+  padding: 0rem;
+} */
