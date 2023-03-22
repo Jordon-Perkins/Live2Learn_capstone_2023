@@ -42,8 +42,8 @@ export const NewClass = () => {
 
 
     return (
-                <form>
-                    <h2>New Class</h2>
+                <form className="style">
+                    <h2 className="text-center">New Class</h2>
                     <fieldset>
                         <div className="form-group">
                             <label htmlFor="title">Title:</label>

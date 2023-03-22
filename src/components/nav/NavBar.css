@@ -1,21 +1,25 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 500px; 
     display: inline;
 }
 
 .navbar__item {
     display: flex;
-    flex-basis: 50%;
-    gap: 20px; 
-    list-style-type: none;
-    justify-content: center;
+    gap: 30px; 
+    /* list-style-type: none; */
+    /* justify-content: center; */
     /* flex-wrap: wrap;
     display: inline; */
 }
 
 .navbar-brand {
     margin-left: 2rem;
+}
+
+.navbar-nav {
+    justify-content: center;
+    display: flex;
 }
