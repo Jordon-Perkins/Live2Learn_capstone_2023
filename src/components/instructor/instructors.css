@@ -1,0 +1,12 @@
+.instructorDetails {
+    background-color: rgb(122, 105, 123);
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 1px solid black;
+    width:250px;
+    
+}
+/* .instructor-card {
+    display: flex;
+    display: wrap;
+} */

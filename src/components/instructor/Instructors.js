@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { getInstructors, deleteClass, leaveClass, joinClass} from "../../managers/InstructorManager.js"
+import "./instructors.css"
 
 
 export const Instructors = () => {
@@ -42,13 +43,14 @@ export const Instructors = () => {
 
 
     return (<>
-        <div>
-            {instructors.map(instructor => {return  (<div className="instructor-card" key={instructor.id}>
+        <div className="row">
+            {instructors.map(instructor => {return  (<div className="instructor-card col-md-6" key={instructor.id}>
                     <div className="instructorDetails">
+                    <h4>Instructor Profile</h4>
+                    <h5>Name:</h5>
                     <p className="instructor-fullName">{instructor.full_name}</p>
+                    <h5>Bio:</h5>
                     <p className="instructor-bio">{instructor.bio}</p>
-                    {/* { deleteButton(itemObj.id) }
-                    <button class="btn btn-outline-light" onClick={ () => { navigate(`${ itemObj.id }/edit`)}}>Edit an Item</button> */}
                     </div>
                 </div>)})}
                             </div>
