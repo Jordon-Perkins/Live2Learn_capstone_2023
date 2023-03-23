@@ -46,11 +46,11 @@ export const MyClass = () => {
     return (<>
     <div  className="row">
         <div  className="row">
-        <h2 className="classHeader text-center">Classes you are instructing!</h2>
         {
             chunks(classesInstructing, 4).map(row => {
                 return (
                     <div className="row">
+                         <h2 className="classHeader text-center">Classes you are instructing!</h2>
                         {
                         row.map(thisClass => {
                             return (

@@ -5,10 +5,9 @@
     width:250px;
     
 }
-/* .instructor-card {
-    display: flex;
-    display: wrap;
-} */
+.instructor-card {
+    height: 250pzx;
+}
 
 .instructorHeader {
     background-color: hsla(0,0%,100%,0.50);
