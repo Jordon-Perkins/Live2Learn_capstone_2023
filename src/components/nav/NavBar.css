@@ -1,25 +1,11 @@
-.navbar {
-    display: flex;
-    flex-wrap: nowrap;
-    /* justify-content: center; */
-    gap: 500px; 
-    display: inline;
-}
-
-.navbar__item {
-    display: flex;
-    gap: 30px; 
-    /* list-style-type: none; */
-    /* justify-content: center; */
-    /* flex-wrap: wrap;
-    display: inline; */
-}
-
 .navbar-brand {
     margin-left: 2rem;
 }
 
-.navbar-nav {
+
+
+.main {
+    display: inline-flex;
     justify-content: center;
-    display: flex;
 }
+

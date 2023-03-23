@@ -13,11 +13,6 @@ export const ApplicationViews = () => {
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            {/* <Route path="/" element={<Classes />} />
-            <Route path="/instructors" element={<Instructors />} />
-            <Route path="/classes/{id}" element={<MyClass />} />
-            <Route path="/classes/new" element={<NewClass />} />
-            <Route path="/classes/{id}/edit" element={<EditClass />} /> */}
             <Route element={<Authorized />}>
             <Route path="/" element={<Classes />} />
             <Route path="/instructors" element={<Instructors />} />

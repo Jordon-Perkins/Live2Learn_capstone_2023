@@ -7,11 +7,6 @@ import "./cards.css"
 export const NewClass = () => {
     const navigate = useNavigate()
     const [skillId, setSkillId] = useState([])
-
-
-        // Since the input fields are bound to the values of
-        // the properties of this state variable, you need to
-        // provide some default values.
     const [currentClass, setCurrentClass] = useState({
         date: "",
         time: "",
@@ -22,18 +17,16 @@ export const NewClass = () => {
     })
 
     useEffect(() => {
-        // TODO: Get the game, then set the state
         getSkills().then((data) => {
-            // console.log(data)
             setSkillId(data)
         })
     }, [])
 
     const changeClassState = (domClass) => {
-        // TODO: Complete the onChange function
+        
         const copy = {...currentClass}
         copy[domClass.target.name] = domClass.target.value
-        // console.log(copy)
+        
         setCurrentClass(copy)
     }
 
@@ -71,7 +64,7 @@ export const NewClass = () => {
                                 setCurrentClass(copy)}}
                             ><option name="skillId" className="game" >Select Skill</option>
                                 {skillId.map(skill => {
-                                    // console.log(game)
+                                   
                                         return <option
                                             name="skillId"
                                             className="form-control"
@@ -119,7 +112,7 @@ export const NewClass = () => {
                     </fieldset>
                     <button type="submit"
                         onClick={evt => {
-                            // Prevent form from being submitted
+                            
                             evt.preventDefault()
 
                             const thisClass = {
@@ -132,9 +125,9 @@ export const NewClass = () => {
                                 tags: currentClass.tags.split(" "),
                             }
 
-                            console.log(thisClass)
+                            
 
-                            // Send POST request to your API
+                            
                             createClass(thisClass)
                                 .then(() => navigate("/classes"))
                         }}

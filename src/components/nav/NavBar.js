@@ -9,8 +9,8 @@ export const NavBar = () => {
         <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <h1 className="navbar-brand">Live2Learn</h1>
-            <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
+            <div id="navbarNav" className="justify-content-center">
+                <ul className="navbar-nav">
                     {
                         (localStorage.getItem("l2l_token") !== null) 
                         ?
@@ -35,12 +35,14 @@ export const NavBar = () => {
                         </>
                         :
                         <>
+                            <div className="main">
                             <li className="nav-item">
                                 <Link className="nav-link" to="/login">Login</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/register">Register</Link>
                             </li>
+                            </div>
                         </>
                     }
                 </ul>
