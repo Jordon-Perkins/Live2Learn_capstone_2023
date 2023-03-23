@@ -46,6 +46,13 @@ to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
+## Wireframe and ERD
+
+[Wireframe](https://www.figma.com/file/UnhpOyDCfJHYCDBR2CRA19/Untitled?node-id=0-1&t=bhPcl14eBvIVKdAi-0)
+
+[ERD](https://dbdiagram.io/d/63f8ee49296d97641d83910a)
+
+
 
 ## Jordon Perkins
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Jordon-Perkins)
