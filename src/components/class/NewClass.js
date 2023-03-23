@@ -110,7 +110,7 @@ export const NewClass = () => {
                         id="tag"
                         type="text"
                         className="form-control"
-                        placeholder="Add a Tag?"
+                        placeholder="Add a Tag!"
                         value={currentClass.tags}
                         name="tags"
                         onChange={changeClassState}
