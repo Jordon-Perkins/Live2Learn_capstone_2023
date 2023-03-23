@@ -90,8 +90,8 @@ export const Classes = () => {
                                             <h3 className="card-header text-center">{thisClass.title}</h3>
                                         </div>
                                         <div className="row">
-                                            <h5 className="description">Description of class:</h5>
-                                            <p className="description ">{thisClass.description}</p>
+                                            <h5 className="description-h">Description of class:</h5>
+                                            <p className="description">{thisClass.description}</p>
                                         </div>
                                         <div className="row">
                                             <h5>Time and Date of Class:</h5>
