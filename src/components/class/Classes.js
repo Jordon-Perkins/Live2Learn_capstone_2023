@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react"
-import { unstable_HistoryRouter } from "react-router-dom"
-import { getClasses, deleteClass, leaveClass, joinClass} from "../../managers/ClassManager.js"
-import { getSkills } from '../../managers/SkillManager.js'
+import { getClasses, leaveClass, joinClass} from "../../managers/ClassManager.js"
 import { chunks } from "../../utils.js"
 import "./cards.css"
 
 export const Classes = () => {
     var user = parseInt(localStorage.getItem("l2l_user_id"))
     const [ classes, setClasses ] = useState([])
-    // const [skillId, setSkillId] = useState([])
+   
 
     useEffect(() => {
         getClasses().then(data => {
@@ -19,15 +17,11 @@ export const Classes = () => {
     const getAllClasses = () => {
         getClasses().then(data => {
             setClasses(data)
-            console.log(classes)
+            
         })
     }
 
-    // useEffect(() => {
-    //     getSkills().then((data) => {
-    //         setSkillId(data)
-    //     })
-    // }, [])
+   
 
     const handleJoin = (id) => {
         joinClass(id).then(() => {
@@ -41,10 +35,7 @@ export const Classes = () => {
              }) 
     }
 
-    // const handleDelete = (id) => {
-    //   deleteClass(id).then(() => {
-    //       {getAllClasses()}
-    //        }) 
+   
 
     const buttons_all = (thisClass) => {
 
@@ -55,18 +46,18 @@ export const Classes = () => {
         var is_currentUser_instructor = instructor_ids.includes(user)
 
         if (is_currentUser_instructor) {
-            console.log("i am an instructor")
+            
             return <></>
         } 
         else if (is_currentUser_student) {
-            console.log("i am a student")
+            
             return <div className="vertical-center"><button className="btn btn-dark"
             onClick={() => {
                 handleLeave(thisClass.id)
             }}
         >Leave Class</button></div>
         } else {
-            console.log("lets dance")
+            
             return <div className="vertical-center"><button className="btn btn-dark"
             onClick={() => {
                 handleJoin(thisClass.id)

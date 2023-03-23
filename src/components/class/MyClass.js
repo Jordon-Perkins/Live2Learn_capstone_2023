@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react"
-import { deleteClass, leaveClass, joinClass} from "../../managers/ClassManager.js"
+import { deleteClass, leaveClass,} from "../../managers/ClassManager.js"
 import { getInstructingClasses} from "../../managers/InstructorManager"
 import { getAttendingClasses} from "../../managers/StudentManager"
-import { useNavigate , useParams } from "react-router-dom"
+import { useNavigate  } from "react-router-dom"
 import "./cards.css"
 import { chunks } from "../../utils.js"
-// import { getSkills } from '../../managers/SkillManager.js'
 
 export const MyClass = () => {
     const [classesInstructing, setClassesInstructing] = useState([])

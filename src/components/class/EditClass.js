@@ -26,23 +26,19 @@ export const EditClass = () => {
             res.tags = res.tags.map(tag => tag.tag).join(" ")
             
             setCurrentClass(res)
-            console.log(currentClass)
+            
         })
     }, 
     [classId])
 
-    console.log(currentClass)
+    
 
     const changeClassState = (domClass) => {
         // TODO: Complete the onChange function
         const copy = {...currentClass}
         copy[domClass.target.name] = domClass.target.value
-        console.log(`Updated ${domClass.target.name} to ${domClass.target.value}`)
-        console.log(`This is the copy:`)
-        console.log(copy)
         setCurrentClass(copy)
-        console.log(`This is the new currentClass:`)
-        console.log(currentClass)
+        
     }
 
     return (
@@ -130,7 +126,7 @@ export const EditClass = () => {
                             
                             updateClass(classId, currentClass)
                                 .then(() => {
-                                    console.log("Navigating to /classes")
+                                    
                                     navigate("/classes")
                                 })
                         }}

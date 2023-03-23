@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { getInstructors, deleteClass, leaveClass, joinClass} from "../../managers/InstructorManager.js"
+import { getInstructors} from "../../managers/InstructorManager.js"
 import "./instructors.css"
 
 
@@ -23,23 +23,6 @@ export const Instructors = () => {
 
         })
     }
-    // const instructors = [
-    //     {
-    //       "id": 1,
-    //       "name": "Instructor 1",
-    //       "bio": "Bio for inst 1"
-    //     },
-    //     {
-    //     "id": 2,
-    //     "name": "Instructor 2",
-    //     "bio": "Bio for inst 2"
-    //     },
-    //     {
-    //     "id": 3,
-    //     "name": "Instructor 3",
-    //     "bio": "Bio for inst 3"
-    //     }
-    //   ]
 
 
     return (<>
