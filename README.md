@@ -7,7 +7,7 @@ On the Live2Learn platform you can attend or leave a class, as well as create, e
 
 
 ## Target Audience:
-Adult Students and instructors who are seraious about learning
+Adult Students and instructors who are serious about learning
 
 
 ## Purpose and problems it solves:
