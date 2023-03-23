@@ -46,7 +46,11 @@ to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
-##
+
+## Jordon Perkins
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Jordon-Perkins)
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jordon-perkins/)
+
 
 ## Tech Stack
 
